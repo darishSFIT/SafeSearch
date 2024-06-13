@@ -1,0 +1,1 @@
+## init file for 'migrations' folder. delete this line if necessary

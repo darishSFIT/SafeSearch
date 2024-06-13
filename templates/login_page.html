@@ -1,0 +1,383 @@
+{% load static %}
+<html lang="en">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+          }
+
+          html {
+            width: 100%;
+            height: 100%;
+          }
+          body {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #container {
+            display: flex;
+            flex-direction: column;
+          }
+          #square {
+            width: 450px;
+            height: 550px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            padding-bottom: 10px;
+            margin-top: 2rem;
+          }
+          #logo_container {
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+          }
+          #logo {
+            width: 18%;
+          }
+          #top_text {
+            font-family: "Noto Sans", sans-serif;
+            font-family: "Quicksand", sans-serif;
+            font-size: 1.5em;
+            /* border: 1px solid; */
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #top_subtext {
+            font-family: "Noto Sans", sans-serif;
+            font-family: "Quicksand", sans-serif;
+            font-size: 1em;
+            color: rgba(0, 0, 0, 0.8);
+            /* border: 1px solid; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #input_container {
+            position: relative;
+            flex-direction: column;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            /* border: 1px solid red; */
+            height: 16%;
+          }
+          #input,
+          #input2 {
+            width: 80%;
+            height: 65%;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            font-family: "Noto Sans", sans-serif;
+            color: rgba(0, 0, 0, 0.7);
+            padding-left: 18px;
+            font-size: 1em;
+          }
+
+          #placeholder,
+          #placeholder2 {
+            font-family: "Noto Sans", sans-serif;
+            position: absolute;
+            top: 55%;
+            left: 14%;
+            /* font-size: 1.1em; */
+            color: rgba(0, 0, 0, 0.7);
+            user-select: none;
+            pointer-events: none;
+          }
+          #link1 {
+            height: 9%;
+            padding-left: 10%;
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+          }
+          #not {
+            height: 10%;
+            display: flex;
+            align-items: flex-end;
+            padding-left: 10%;
+            font-family: "Quicksand", sans-serif;
+            font-size: 0.85em;
+            color: rgba(0, 0, 0, 0.65);
+          }
+          #link2 {
+            margin-top: 1%;
+            height: 11%;
+            padding-left: 10%;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.9em;
+          }
+          .link {
+            cursor: pointer;
+            color: #1a73e8;
+            font-family: "Quicksand", sans-serif;
+            font-weight: 600;
+          }
+          #last_split {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 22%;
+          }
+          .btn_container {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            /* justify-content: center; */
+            align-items: flex-start;
+            padding-left: 7%;
+          }
+          #btn_right {
+            cursor: pointer;
+            width: 48%;
+            height: 33.5%;
+            font-family: "Quicksand", sans-serif;
+            background-color: #1a73e8;
+            color: white;
+            outline: none;
+            font-weight: 600;
+            font-size: 0.85em;
+            border: none;
+            border-radius: 5px;
+          }
+          #btn2 {
+            justify-content: flex-end;
+            padding-right: 10%;
+          }
+          #btn_right:hover {
+            background-color: #165ebd;
+          }
+          #btn_left {
+            border-radius: 5px;
+            background-color: transparent;
+            width: 100%;
+            height: 33.5%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #2779e4;
+            font-weight: 600;
+            font-size: 0.85em;
+            font-family: "Noto Sans", sans-serif;
+          }
+          #btn_left:hover {
+            background-color: rgb(240, 245, 252);
+          }
+          #bottom_text {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: "Quicksand", sans-serif;
+            font-size: 0.75em;
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: 600;
+          }
+          #lang_container {
+            width: 55%;
+            display: flex;
+            justify-content: flex-start;
+          }
+          #lang {
+            border: none;
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1em;
+            outline: none;
+            cursor: pointer;
+          }
+
+          .logo {
+            text-decoration: none;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            gap: 10px;
+          }
+
+          .logo {
+            text-decoration: none;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+          }
+
+          .logo a {
+            text-decoration: none;
+            font-size: 35px;
+            color: #2d2929;
+            font-weight: bold;
+          }
+
+          .logo .fa-magnifying-glass {
+            font-size: 40px;
+            color: #2d2929;
+            font-weight: bold;
+            transform: rotate(90deg);
+            cursor: pointer;
+          }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Source for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Ubuntu:wght@700&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+  </head>
+<body>
+    <div id="container">
+        <div id="square">
+            <div class="logo">
+              <a href="#">
+                <!-- <img class="zoom" src="https://i.imgur.com/C7imTeq.png" /> -->
+                SafeSearch
+              </a>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div id="top_text">Sign in</div>
+              <!-- <label for="username">Username</label>
+              <input type="text" placeholder="Enter Username" id="username" name="username">
+      
+              <label for="password">Password</label>
+              <input type="password" placeholder="Password" id="password" name="pass">
+      
+              <button type="submit">Log In</button> -->
+
+              <!-- <input type="button" value=""> -->
+              <!-- <div class="social">
+                <div class="go"><i class="fab fa-google"></i>  Google</div>
+                <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+              </div>
+              <a href="{% url 'signup' %}" >Create a account</a>
+          </form> -->
+
+
+          <form method="post">
+            {% csrf_token %} 
+            <div id="top_subtext">Using your SafeSearch Account</div>
+            <div id="input_container">
+              <input class="input" type="text" id="input" name="username">
+              <!-- <input type="text" name="" id="input"> -->
+                <div id="placeholder">Username</div>
+            </div>
+
+            <div id="input_container">
+              <input type="password" id="input2" name="pass">
+              <!-- <input type="password" name="" id="input2"> -->
+                <div id="placeholder2">Password</div>
+            </div>
+
+            <div id="link1" class="link">Forgot email?</div>
+            <div id="not">Not your computer? Use Guest mode to sign in privately.</div>
+            <div id="link2" class="link">Learn more</div>
+            <div id="last_split">
+                <div class="btn_container">
+                  <a href="{% url 'signup' %}">
+                    <input type="button" value="Create account" id="btn_left">
+                  </a>
+                </div>
+                <div id="btn2" class="btn_container">
+                    <button type="submit" id="btn_right">Login</button>
+                </div>
+            </div>
+        </div>
+      </form>
+
+        <div id="bottom_text">
+            <div id="lang_container">
+                <select name="lang" id="lang">
+                    <option value="English(United States)">English (United States)</option>
+                </select>
+            </div>
+            <div>Help</div>
+            <div>Privacy</div>
+            <div>Terms</div>
+
+        </div>
+    </div>
+    
+    <script>
+      var inpt = document.getElementById('input');
+      var placeholder = document.getElementById('placeholder');
+      var placeholder2 = document.getElementById('placeholder2');
+      var inpt2 = document.getElementById('input2');
+
+      //when clicked inside of textbox
+      inpt.addEventListener('focus', function () {
+          placeholder.style.color = "#1a73e8";
+          inpt.style.border = "2px solid #1a73e8";
+          placeholder.style.transition = "0.1s ease";//add smooth transition
+          placeholder.style.fontSize = "0.7em";//change size
+          placeholder.style.marginTop = "-25px"//Move up
+          placeholder.style.backgroundColor = "white";//add color to background
+          placeholder.style.padding = "0px 10px";//add white space on each side
+      });
+
+      inpt2.addEventListener('focus', function () {
+          placeholder2.style.color = "#1a73e8";
+          inpt2.style.border = "2px solid #1a73e8";
+          placeholder2.style.transition = "0.1s ease";//add smooth transition
+          placeholder2.style.fontSize = "0.7em";//change size
+          placeholder2.style.marginTop = "-25px"//Move up
+          placeholder2.style.backgroundColor = "white";//add color to background
+          placeholder2.style.padding = "0px 10px";//add white space on each side
+      });
+
+      //when clicking out of the text box
+      inpt.addEventListener('blur', function () {
+          //check if there is text
+          if (inpt.value.length == 0) {
+              placeholder.style.color = "rgba(0,0,0,0.7)";
+              inpt.style.border = "1px solid rgba(0,0,0,0.2)";
+              placeholder.style.fontSize = "1em";
+              placeholder.style.marginTop = "0px"
+              placeholder.style.backgroundColor = "transparent";
+              placeholder.style.padding = "0px 0px";
+          }
+      });
+
+      inpt2.addEventListener('blur', function () {
+          //check if there is text
+          if (inpt2.value.length == 0) {
+              placeholder2.style.color = "rgba(0,0,0,0.7)";
+              inpt2.style.border = "1px solid rgba(0,0,0,0.2)";
+              placeholder2.style.fontSize = "1em";
+              placeholder2.style.marginTop = "0px"
+              placeholder2.style.backgroundColor = "transparent";
+              placeholder2.style.padding = "0px 0px";
+          }
+      });
+
+      //Function for resetting text
+      function defaultPosition() {
+
+
+      }
+      console.log(inpt)
+      console.log(placeholder)
+    </script>
+</body>
+</html>

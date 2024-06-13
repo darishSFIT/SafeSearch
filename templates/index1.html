@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google</title>
+  <script src="https://kit.fontawesome.com/163554b11b.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      /* background-image: url("https://images.hdqwalls.com/download/amusement-park-blur-5k-qe-1366x768.jpg"); */
+      background-size: inherit;
+      font-size: 10pt;
+      font-family: arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    button {
+      font-weight: bold;
+      font-family: arial;
+    }
+
+    /* Top Toolbar */
+    .top-toolbar {
+      height: 50px;
+    }
+
+    .top-toolbar nav {
+      float: right;
+      margin: 7px 21px;
+    }
+
+    .top-toolbar nav a {
+      margin: 3px 6px;
+      color: #404040;
+    }
+
+    .top-toolbar nav a:hover {
+      color: #111111;
+    }
+
+    .top-toolbar nav button {
+      padding: 7px 12px;
+      border-radius: 2px;
+      /* background-color: #4585F1;*/
+      background-image: -moz-linear-gradient(top left, #4084F9 0%, #4585F1 100%);
+      background-image: -o-linear-gradient(top left, #4084F9 0%, #4585F1 100%);
+      background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #4585F1), color-stop(1, #0097DE));
+      background-image: -webkit-linear-gradient(top left, #4084F9 0%, #4585F1 100%);
+      color: white;
+      border: 1px darkblue;
+      font-size: 9.5pt;
+      cursor: pointer;
+    }
+
+    .top-toolbar nav button:hover {
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+    }
+
+    .top-toolbar nav img {
+      margin: 0 7.5px;
+      height: 22px;
+      position: relative;
+      top: 7px;
+    }
+
+    /* End of Top Toolbar */
+    /* Search */
+    .search {
+      text-align: center;
+      clear: both;
+      margin: 11% 0 0 0;
+    }
+
+    .logo {
+      max-width: 21%;
+      margin: 0 auto;
+    }
+
+    .search img {
+      margin-bottom: 3%;
+      max-width: 100%;
+    }
+
+    .search input {
+      width: 570px;
+      background-color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      -webkit-box-shadow: 3px 3px 15px 0px #20212447;
+      -moz-box-shadow: 3px 3px 15px 0px #20212447;
+      box-shadow: 3px 3px 15px 0px #20212447;
+      border: none;
+      margin-bottom: 10px;
+      /* background: url('images/microphone.png') no-repeat;
+          background-position: right;
+          background-size: 4.25%;*/
+    }
+
+    .search-bar {
+      max-width: 80%;
+    }
+
+    .search input:focus {
+      outline: none;
+      border: 1px solid #4285F4;
+    }
+
+    .search button {
+      margin: 14px 7px 0 5px;
+      padding: 7px 8px;
+      border-radius: 5px;
+      border: 1px solid #D0D0D0;
+      color: #444444;
+      background-image: -moz-linear-gradient(top, #F5F5F5 0%, #F0F0F0 100%);
+      background-image: -o-linear-gradient(top, #F5F5F5 0%, #F0F0F0 100%);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F5F5F5), color-stop(1, #F0F0F0));
+      background-image: -webkit-linear-gradient(top, #F5F5F5 0%, #F0F0F0 100%);
+      background-image: linear-gradient(to bottom, #F5F5F5 0%, #F0F0F0 100%);
+      cursor: pointer;
+    }
+
+    .search button:hover {
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+    }
+
+    /* End of Search */
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      height: 42px;
+      width: 100%;
+      font-size: 9.5pt;
+      background-image: -moz-linear-gradient(top, #F5F5F5 0%, #F0F0F0 100%);
+      background-image: -o-linear-gradient(top, #F5F5F5 0%, #F0F0F0 100%);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F5F5F5), color-stop(1, #F0F0F0));
+      background-image: -webkit-linear-gradient(top, #F5F5F5 0%, #F0F0F0 100%);
+      background-image: linear-gradient(to bottom, #F5F5F5 0%, #F0F0F0 100%);
+    }
+
+    .footer-left {
+      float: left;
+      margin-left: 16px;
+    }
+
+    .footer-right {
+      float: right;
+      margin-right: 16px;
+    }
+
+    footer nav {
+      display: inline-block;
+      padding: 15px 0 0 0;
+    }
+
+    footer nav a {
+      padding: 3px 14px;
+      color: #646464;
+    }
+
+    footer nav a:hover {
+      color: #000000;
+    }
+
+    /* End of Footer */
+    @media screen and (max-width: 510px) {
+
+      .top-toolbar nav a:nth-child(2),
+      a:nth-child(3),
+      footer {
+        display: none;
+      }
+
+      .logo {
+        z-index: -1;
+        max-width: 40%;
+      }
+    }
+
+    /* Extra by Darish*/
+    .zoom {
+      text-decoration: none;
+      padding: 0px;
+      background-color: white;
+      transition: transform .2s;
+      /* Animation */
+      margin: 0 auto;
+    }
+
+    .zoom:hover {
+      font-weight: bold;
+      transform: scale(1.1);
+      /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    .navbar {
+      text-decoration:none;
+
+    }
+    .navbar:hover {
+      text-decoration:underline;
+
+    }
+    .user{
+      margin-right: 45px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-toolbar">
+    <nav>
+      <a class="user">Logged in as: {% if request.user.is_authenticated %} {{ user.username }} {% else %} Not Loggen in {% endif %}</a>
+      <a class="navbar" href="https://myaccount.google.com/">You</a>
+      <a class="navbar" href="https://mail.google.com/">Gmail</a>
+      <a class="navbar" href="https://www.google.co.in/imghp?hl=en&authuser=0&ogbl">Images</a>
+      <a class="navbar" href="https://www.sfit.ac.in/">
+        <img class="zoom" src="https://imgur.com/FvRNAbO.png" alt="SFIT Homepage">
+      </a>
+      <img class="zoom" src="https://icon-library.com/images/google-menu-icon/google-menu-icon-9.jpg" />
+      
+      {% if request.user.is_authenticated %}
+          <img src="https://freesvg.org/img/abstract-user-flat-4.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy">
+          <a href="{% url 'logout' %}">
+            <button class="signin zoom">Sign Out</button>
+      {% else %}
+        <a href="{% url 'login' %}">
+        <button class="signin zoom">Sign In</button>
+      {% endif %}
+      
+      
+      
+      </a>
+    </nav>
+  </div>
+ 
+  <div class="search">
+    <div class="logo">
+      <a href="#">
+        
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="272" height="92">
+  <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+  <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+  <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
+  <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
+  <path fill="#EA4335" d="m262.02 54.48 7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98 19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
+  <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/></svg> -->
+        <img class="zoom" src="https://i.imgur.com/C7imTeq.png" />
+      </a>
+
+    </div>
+    <form action=""></form>
+    <form method="POST" action="search"> {% csrf_token %}
+      <input class="search-bar" type="text" name="search" placeholder="Search Google or type a URL" autocomplete="off" x-webkit-speech />
+      <!-- <a href="https://fontawesome.com/icons/microphone?f=classic&s=solid" ><img src= ""></img></a> -->
+      <!-- <form action="" method="post">
+        <a href="{% url 'voice' %}">
+          <button type="submit" class="zoom">
+            <svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.9 10.8C16.3556 10.8 16.7322 11.1386 16.7918 11.5778L16.8 11.7V12.3C16.8 16.5713 13.494 20.0705 9.3012 20.378L9.3 23.1C9.3 23.597 8.89704 24 8.4 24C7.94436 24 7.5678 23.6614 7.50816 23.2222L7.5 23.1V20.3782C3.39988 20.0779 0.147396 16.7256 0.00487175 12.5836L0 12.3V11.7C0 11.203 0.402948 10.8 0.9 10.8C1.35564 10.8 1.73219 11.1386 1.79178 11.5778L1.8 11.7V12.3C1.8 15.6924 4.48134 18.4585 7.84032 18.5947L8.1 18.6H8.7C12.0924 18.6 14.8585 15.9187 14.9947 12.5597L15 12.3V11.7C15 11.203 15.403 10.8 15.9 10.8ZM8.4 0C11.0509 0 13.2 2.14903 13.2 4.8V12C13.2 14.6509 11.0509 16.8 8.4 16.8C5.74903 16.8 3.6 14.6509 3.6 12V4.8C3.6 2.14903 5.74903 0 8.4 0ZM8.4 1.8C6.74316 1.8 5.4 3.14315 5.4 4.8V12C5.4 13.6568 6.74316 15 8.4 15C10.0568 15 11.4 13.6568 11.4 12V4.8C11.4 3.14315 10.0568 1.8 8.4 1.8Z" fill="#123BB6"></path></svg>
+          </button>
+        </a>
+      </form> -->
+      <div class="search-nav">
+        <div class="search-button">
+          <button class="zoom" type="submit">Search</button>
+    </form>
+    <a href="#">
+      <button class="zoom">I'm Feeling Lucky</button>
+    </a>
+    <!-- <form method="post" action="{% url 'voice' %}">
+      {% csrf_token %}
+      <a href="{% url 'voice' %}">
+        <button type="submit" class="zoom" onclick="voice()">Voice Assistant</button>
+    </form> -->
+    
+    <form action="{% url 'voice' %}" method="post">{% csrf_token %}
+      <a href="{% url 'voice' %}">
+        <button type="submit" class="zoom">
+          <svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.9 10.8C16.3556 10.8 16.7322 11.1386 16.7918 11.5778L16.8 11.7V12.3C16.8 16.5713 13.494 20.0705 9.3012 20.378L9.3 23.1C9.3 23.597 8.89704 24 8.4 24C7.94436 24 7.5678 23.6614 7.50816 23.2222L7.5 23.1V20.3782C3.39988 20.0779 0.147396 16.7256 0.00487175 12.5836L0 12.3V11.7C0 11.203 0.402948 10.8 0.9 10.8C1.35564 10.8 1.73219 11.1386 1.79178 11.5778L1.8 11.7V12.3C1.8 15.6924 4.48134 18.4585 7.84032 18.5947L8.1 18.6H8.7C12.0924 18.6 14.8585 15.9187 14.9947 12.5597L15 12.3V11.7C15 11.203 15.403 10.8 15.9 10.8ZM8.4 0C11.0509 0 13.2 2.14903 13.2 4.8V12C13.2 14.6509 11.0509 16.8 8.4 16.8C5.74903 16.8 3.6 14.6509 3.6 12V4.8C3.6 2.14903 5.74903 0 8.4 0ZM8.4 1.8C6.74316 1.8 5.4 3.14315 5.4 4.8V12C5.4 13.6568 6.74316 15 8.4 15C10.0568 15 11.4 13.6568 11.4 12V4.8C11.4 3.14315 10.0568 1.8 8.4 1.8Z" fill="#123BB6"></path></svg>
+        </button>
+      </a>
+    </form>
+    </a>
+
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <footer class="bottom-toolbar">
+      <nav class="footer-left">
+        <a href="#">Advertising</a>
+        <a href="#">Business</a>
+        <a href="#">About</a>
+      </nav>
+      <nav class="footer-right">
+        <a href="#">New Privacy &amp; Terms</a>
+        <a href="#">Settings</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+
+</html>

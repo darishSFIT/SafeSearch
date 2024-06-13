@@ -1,0 +1,1 @@
+## init file for 'search' folder. delete this line if necessary

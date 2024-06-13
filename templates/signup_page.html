@@ -1,0 +1,374 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Ubuntu:wght@700&display=swap" rel="stylesheet">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+
+    <style>
+         * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  /* background-color: #f5f4f4; */
+  text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.container .row {
+  width: 900px;
+  height: max-content;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.left {
+  flex: 1;
+}
+
+.logo_container {
+  height: 5%;
+  display: flex;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+
+.logo {
+  text-decoration: none;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
+.logo a {
+  font-size: 35px;
+  color: #2d2929;
+  font-weight: bold;
+}
+
+.logo .fa-magnifying-glass {
+  font-size: 40px;
+  color: #2d2929;
+  font-weight: bold;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.top_text {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px;
+}
+
+.left form {
+  max-width: 90rem;
+  border-radius: .5rem;
+  /* box-shadow: var(--box-shadow); */
+  background: #fff;
+  /* border: .1rem solid rgba(0,0,0,.2); */
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+
+.left form .inputBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 5px 0;
+}
+
+.left form .inputBox .input{
+  width: 48%;
+}
+
+.left form .inputBox .email{
+  width: 100%;
+}
+
+.left form .inputBox .input span{
+  display: block;
+  padding: .5rem 0;
+  font-size: 1.5rem;
+  font-family: "Noto Sans", sans-serif;
+  color: #666;
+  position: absolute;
+  top: 4px;
+  margin-left: 10px;
+}
+
+.left form .inputBox .input input{
+    width: 100%;
+    background: transparent;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    color: #192a56;
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.left form .inputBox .input input:focus{
+    border: .1rem solid #1a73e8;
+}
+
+.left form p{
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.left .btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%;
+}
+
+.left .btn a{
+  font-size: 16px;
+  color: #1a73e8;
+  font-weight: bold;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.left .btn button{
+  width: max-content;
+  height: max-content;
+  font-family: "Quicksand", sans-serif;
+  background-color: #1a73e8;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.right p {
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  width: 300px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.bottom_text {
+  height: 50px;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+.lang_container {
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lang {
+  border: none;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.5rem;
+  outline: none;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="left">
+                <div class="logo">
+                  <a href="#">
+                    <!-- <img class="zoom" src="https://i.imgur.com/C7imTeq.png" /> -->
+                    SafeSearch
+                  </a>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="top_text">Create your SafeSearch Account</div>
+
+                <!-- <form action="" method="post">
+                  {% csrf_token %}           
+                  <label for="username">Username</label>
+                  <input type="text" placeholder="Username" name="username" id="username">
+          
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="Email or Phone" name="email" id="email">
+          
+                  <label for="password1">Password</label>
+                  <input type="password" placeholder="Password" id="password1" name="password1">
+          
+          
+                  <label for="password2">Confrom Password</label>
+                  <input type="password" placeholder="Confrom Password" id="password2" name="password2">
+                  <button type="submit">Signup</button>
+                  
+                  <a href="{% url 'login' %}" >i have already account</a>
+              </form> -->
+
+
+
+                <form action="" method="post">
+                    {% csrf_token %} 
+                    <div class="inputBox">
+                        <div class="input">
+                            <input type="text" placeholder="First name" name="username">
+                        </div>
+                        <div class="input">
+                            <input type="text" placeholder="Last name" name="L_username">
+                        </div>
+                    </div>
+        
+                    <div class="inputBox">
+                        <div class="input email">
+                            <input type="email" placeholder="Email" name="email">
+                        </div>
+                    </div>
+                    <p>You can use letters, numbers & period</p>
+        
+                    <div class="inputBox">
+                        <div class="input">
+                            <input type="password" placeholder="Password" name="password1">
+                        </div>
+                        <div class="input">
+                            <input type="password" placeholder="Confirm" name="password2">
+                        </div>
+                    <p>Use 8 or more character with mix of letters, numbers & symbols</p>
+                    </div>
+                
+                <div class="btn">
+                    <a href="{% url 'login' %}">Sign in instead</a>
+                    <button type="submit" id="submit-btn">Sign up</button>
+                </div>
+              </form>
+            </div>
+            <div class="right">
+                <img src="https://i.imgur.com/U6ggcCZ.png" alt="">
+                <p>One Account. All of SafeSearch working for you.</p>
+            </div>
+        </div>
+        <div class="bottom_text">
+            <div class="lang_container">
+                <select name="lang" class="lang">
+                    <option value="English(United States)">English (United States)</option>
+                </select>
+            </div>
+            <div>Help</div>
+            <div>Privacy</div>
+            <div>Terms</div>
+        </div>
+    </div>
+    <script>
+      function validateForm() {
+        var name = document.getElementById("First name").value;
+        var email = document.getElementById("Email").value;
+        var password = document.getElementById("Password").value;
+      
+        if (name == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+        if (email == "") {
+          alert("Email must be filled out");
+          return false;
+        }
+        if (!/\S+@\S+\.\S+/.test(email)) {
+          alert("Invalid email address");
+          return false;
+        }
+        if (password == "") {
+          alert("Password must be filled out");
+          return false;
+        }
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long");
+          return false;
+        }
+        return true;
+      }
+
+        const form = document.querySelector('#myForm');
+      
+      form.addEventListener('submit', (event) => {
+        event.preventDefault(); // prevent the default form submission
+         
+        // get the input values
+        const username = document.querySelector('#username').value;
+        const password = document.querySelector('#password').value;
+        
+        // send the data to the server
+        fetch('/submit-form', {
+          method: 'POST',
+          body: JSON.stringify({ username, password }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          // handle the server response
+        })
+        .catch(error => {
+          // handle the error
+        });
+      });
+
+  </script>    
+</body>
+</html>
