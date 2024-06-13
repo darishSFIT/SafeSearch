@@ -2,7 +2,7 @@
 #### A search engine web application made using python django framework that allows the user to search for content throught the internet. 
 ### Features:
 - I'm Feeling Lucky (random website)
-- Voice Search
+- Voice Assistant
 - File Search
 - Account Creation
 <br>
